@@ -18,6 +18,8 @@
             python311Packages.virtualenv
             python311Packages.numpy
             python311Packages.scipy
+	    tcpdump
+	    wireshark
           ];
 
           shellHook = ''
