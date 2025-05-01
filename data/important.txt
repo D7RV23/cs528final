@@ -1,0 +1,2 @@
+EQemu1 and 2 are just the raw packages I have collected. 3 is one where I actually tooke the filter information only
+and made it into its own package from package 2's 
