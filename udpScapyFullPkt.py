@@ -5,8 +5,10 @@
 
 import os
 from scapy.all import rdpcap, UDP
+import argparse
 
-def parse_eqemu_pcap(file_path):
+
+def parse_eqemu_pcap(arguments =file_path, output_file=none):
     packets = rdpcap(file_path)
     print(f"Loaded {len(packets)} packets from {file_path}.")
 
@@ -30,6 +32,7 @@ def parse_eqemu_pcap(file_path):
                     f.write(f"{i}\t{hex(opcode)}\t{len(udp_payload)}\t{udp_payload.hex(' ')}\t{pkt.time}\n")
     
     print(f"Packet analysis saved to {output_file}")
+
 # Have the command be able to run in the terminal with spesifying the given packet capture file 
 # This is so i dont spend time having to edit every intance of the fullpath of the file
 if __name__ == "__main__":
@@ -39,6 +42,9 @@ if __name__ == "__main__":
         print("Hey you don’t have Packages! I Cannot Read anything :( ")
         print("Usage: python3 SCRIPT.py your_capture.pcapng")
         print()
-    else:
-        parse_eqemu_pcap(sys.argv[1])
+    else if len(sys.argv) = 2:
+        parse_eqemu_pcap(sys.argv[2])
+
+    else if len(sys.argv) = 3
+        parse_eqemu_pcap(sys.argv[2])
 
